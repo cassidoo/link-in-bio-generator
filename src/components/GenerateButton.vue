@@ -1,11 +1,12 @@
 <template>
   <div class="generate-button">
-    <a>Generate my site</a>
+    <a :href="siteLink">Generate my site</a>
+
     VITE_NAME={{ name }} <br />
     VITE_PROFILE_PIC={{ propic }}
     <br />
     booger
-    {{ convertListOfLinks }}
+    {{ convertListOfLinks() }}
   </div>
 </template>
 
@@ -23,13 +24,26 @@ export default {
     },
     convertListOfLinks() {
       let linkString = ''
-      console.log(this.list)
 
       this.list.forEach((l) => {
-        linkString += `${convertLink(l.name)}=${l.url}&`
+        linkString += `${this.convertLink(l.name)}=${l.url}&`
       })
 
       return linkString
+    },
+  },
+  computed: {
+    siteLink() {
+      return (
+        'https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/link-in-bio-template#' +
+        'VITE_NAME=' +
+        this.name +
+        '&' +
+        'VITE_PROFILE_PIC=' +
+        this.propic +
+        '&' +
+        this.convertListToLinks
+      )
     },
   },
 }
