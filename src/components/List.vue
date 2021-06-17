@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      newItem: {},
+      newItem: { name: '', url: 'https://' },
     }
   },
   props: {
@@ -31,7 +31,7 @@ export default {
   methods: {
     addItem() {
       this.$emit('update:list', [...this.list, this.newItem])
-      this.newItem = {}
+      this.newItem = { name: '', url: 'https://' }
     },
     removeItem(index) {
       this.list.splice(index, 1)

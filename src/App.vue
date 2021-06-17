@@ -9,16 +9,8 @@
   </div>
 
   <List v-model:list="list" />
-  <!-- this is magic -->
 
-  <div>
-    hellloooo
-
-    {{ name }}
-    {{ propic }}
-    {{ list }}
-    <GenerateButton :name="name" :propic="propic" :list="list" />
-  </div>
+  <GenerateButton :name="name" :propic="propic" :list="list" />
 </template>
 
 <script>
@@ -36,7 +28,7 @@ export default {
       list: [
         {
           name: 'example',
-          url: 'example.com',
+          url: 'https://example.com',
         },
       ],
       name: '',
