@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     convertLink(str) {
-      return `VITE_${str.replace(' ', '_').toUpperCase()}_LINK`
+      return `VITE_${str.replace(/ /g, '_').toUpperCase()}_LINK`
     },
     convertListOfLinks() {
       let linkString = ''
@@ -31,7 +31,7 @@ export default {
       return (
         'https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/link-in-bio-template#' +
         'VITE_NAME=' +
-        this.name +
+        this.name.replace(/ /g, '_') +
         '&' +
         'VITE_PROFILE_PIC=' +
         this.propic +
