@@ -1,7 +1,7 @@
 <template>
   <div class="list">
-    Add a link: <br />
-    <input type="text" v-model="newItem.name" />
+    <p>Add a link: </p>
+    <input type="text" v-model="newItem.name" id="name" />
     <input type="text" v-model="newItem.url" @keyup.enter="addItem" />
     <button @click="addItem">+</button>
 
@@ -32,6 +32,7 @@ export default {
     addItem() {
       this.$emit('update:list', [...this.list, this.newItem])
       this.newItem = { name: '', url: 'https://' }
+      document.getElementById('name').focus()
     },
     removeItem(index) {
       this.list.splice(index, 1)
@@ -44,8 +45,7 @@ export default {
 .list {
   padding: 20px;
 }
-input,
-button {
+input {
   padding: 5px;
 }
 </style>

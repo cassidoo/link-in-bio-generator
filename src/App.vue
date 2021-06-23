@@ -1,5 +1,5 @@
 <template>
-  <h1>Generate a Link in Bio Site</h1>
+  <h1>Generate a "Link in Bio" Site</h1>
   <div class="required">
     <p><span>Your name:</span> <input type="text" placeholder="Liz Lemon" v-model="name" /></p>
     <p>
@@ -11,6 +11,13 @@
   <List v-model:list="list" />
 
   <GenerateButton :name="name" :propic="propic" :list="list" />
+
+  <p class="repos">
+    <a href="https://test-lib-generated-stream-314.netlify.app/">Here's an example site</a>
+    ·
+    <a href="https://github.com/cassidoo/link-in-bio-generator">Here's the repo</a>
+  </p>
+  
 </template>
 
 <script>
@@ -66,5 +73,39 @@ export default {
 .required p {
   display: flex;
   justify-content: space-between;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+input {
+  border-radius: 5px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+button {
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  background: #2c3e50;
+  border: 2px solid #2c3e50;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+button:hover {
+  background: white;
+  border: 2px solid #2c3e50;
+  color: #2c3e50;
+}
+
+.repos a {
+  color: #2c3e50;
 }
 </style>

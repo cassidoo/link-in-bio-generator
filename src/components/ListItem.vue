@@ -3,7 +3,7 @@
     <!--{{ item.name }} - {{ item.url }}-->
     <input type="text" v-model="item.name" />
     <input type="text" v-model="item.url" />
-    <button @click="$emit('delete')">X</button>
+    <button @click="$emit('delete')">×</button>
   </div>
 </template>
 
@@ -26,7 +26,6 @@ VITE_MY_PERSONAL_WEBSITE=https://cassidoo.co
 
 <style scoped>
 .item {
-  padding: 5px;
   margin: 5px;
 }
 </style>
